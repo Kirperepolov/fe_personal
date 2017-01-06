@@ -31,6 +31,7 @@
 #people .item:hover{
   img{
     -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
   }
   .caption {
     color:#ac5aff;
@@ -38,4 +39,7 @@
   hr.colored{
     border-color: #ac5aff;
   }
+}
+.modal-content {
+  border-radius: 0;
 }
