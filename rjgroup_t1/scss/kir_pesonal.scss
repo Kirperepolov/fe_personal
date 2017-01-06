@@ -1,0 +1,41 @@
+#values .media {
+  i.fa{
+    -webkit-transition: height 1s,width 1s, line-height 1s, font-size 1s;
+    transition: height 1s,width 1s, line-height 1s, font-size 1s;
+  }
+  .pull-left{
+    -webkit-transition: padding-right 1s;
+    transition: padding-right 1s;
+  }
+  .media-body{
+    -webkit-transition: padding-left 1s;
+    transition: padding-left 1s;
+  }
+}
+
+#values .media:hover {
+  i.fa{
+    height: 90px;
+    width: 90px;
+    line-height: 90px;
+    font-size: 33px;
+  }
+  .pull-left{
+    padding-right: 5px;
+  }
+  .media-body{
+    padding-left: 5px;
+  }
+}
+
+#people .item:hover{
+  img{
+    -webkit-filter: grayscale(100%);
+  }
+  .caption {
+    color:#ac5aff;
+  }
+  hr.colored{
+    border-color: #ac5aff;
+  }
+}
