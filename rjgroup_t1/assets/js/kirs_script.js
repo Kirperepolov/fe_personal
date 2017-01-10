@@ -19,7 +19,7 @@ function validateInput(){
     // hide the error message
     $('#incorrect-data').text('')
                         .addClass('hidden');
-    // this makes the button ussable
+    // this makes the button usable
     $("#call-back button").attr({
                                 "data-dismiss":'modal',
                                 "data-toggle":"modal",
