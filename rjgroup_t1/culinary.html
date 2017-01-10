@@ -47,6 +47,7 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
 
+  <!-- Kir's personal stylesheet -->
   <link rel="stylesheet" href="css/kir_pesonal.css">
 </head>
 <!-- Alternate Body Classes: .modern and .vintage -->
@@ -531,42 +532,98 @@
         <!-- <a href="https://wrapbootstrap.com/theme/vitality-multipurpose-one-page-theme-WB02K3KK3" class="btn btn-block btn-full-width">Buy Vitality Now!</a> -->
         <a href="#" class="btn btn-block btn-full-width" data-toggle="modal" data-target="#myModal">Buy Vitality Now!</a>
 
-        <!-- Modal popup-->
-        <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
+        <div id="add-ons">
+          <!-- PHONE BUTTON -->
+          <div class="phone">
+            <i class="fa fa-phone swing animated infinite" data-toggle="modal" data-target="#call-back"></i>
+          </div>
+          <!-- OREDER POPUP -->
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content modern">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3>Place an order</h3>
+              <!-- Popup content-->
+              <div class="modal-content modern">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3>Place an order</h3>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="usr-name" placeholder="Name" required autofocus>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="usr-surname" placeholder="Surname" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" class="form-control" id="phone-number" placeholder="Phone number">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="usr-email" placeholder="Email" required data-validation-email-message="wrong email">
+                  </div>
+                  <div class="form-group">
+                    <label for="usr-message">Your message:</label>
+                    <textarea type="text" class="form-control" id="usr-message" rows="5"></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Order</button>
+                </div>
               </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="usr-name" placeholder="Name" required>
+
+            </div>
+          </div>
+
+          <!-- CALLBACK POPUP -->
+          <div id="call-back" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Popup content-->
+              <div class="modal-content modern">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3>Order a free callback</h3>
                 </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" id="usr-surname" placeholder="Surname" required>
-                </div>
-                <div class="form-group">
-                  <input type="tel" class="form-control" id="phone-number" placeholder="Phone number">
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" id="usr-email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                  <label for="usr-message">Your message:</label>
-                  <textarea type="text" class="form-control" id="usr-message" rows="5"></textarea>
-                </div>
+                <form action="mail/contact_me_kir.php" method="post" id="call-back-form"></form>
+                  <div class="modal-body">
+
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="name"
+                      name="name" placeholder="Name"
+                      required form="call-back-form">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <label for="name"></label>
+                    </div>
+
+                    <div class="input-group">
+                      <input type="tel" class="form-control" id="phone"
+                      name="phone" placeholder="Phone number"
+                      required form="call-back-form">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                      <label for="phone"></label>
+                    </div>
+                    <p id="incorrect-data" class="alert alert-warning hidden"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-outline-dark">Call me!</button>
+                  </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Order</button>
+              <!-- callback order confirmation -->
+
+
+            </div>
+          </div>
+          <div id="confirmation" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content modern">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="text-center">the Callbask is successfully requested</h4>
+                </div>
               </div>
             </div>
-
           </div>
-        </div>
 
+        </div>
 
         <footer class="footer" style="background-image: url('assets/img/culinary/bg-footer.jpg')">
           <div class="container text-center">
@@ -623,6 +680,8 @@
           <script src="assets/js/plugins/jqBootstrapValidation.js"></script>
           <!-- Vitality Theme Scripts -->
           <script src="assets/js/vitality.js"></script>
+            <!-- Kir's personal Script -->
+            <script src="assets/js/kirs_script.js" charset="utf-8"></script>
         </body>
 
         </html>
