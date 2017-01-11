@@ -1,5 +1,11 @@
 'use strict';
 
+$(function () {
+  $("input").not("[type=submit]").jqBootstrapValidation({
+    preventSubmit: true
+  });
+} );
+
 /**
  * validateInput - this function just validates that the input fields are
  *              not empty. Afte they are filled with information it makes
@@ -7,19 +13,10 @@
  *
  */
 function validateInput(){
-  if ($("#call-back input#name").val().trim().length === 0){
-    $('#incorrect-data').text("You must type in Your name")
-                        .removeClass('hidden');
-                        return;
-  } else if ($("#call-back input#phone").val().length<9) {
-    $('#incorrect-data').text('You must type in Your phone number')
-                        .removeClass('hidden');
+  if (($("#call-back input#name").val().trim().length === 0)||
+   ($("#call-back input#phone").val().length<9)) {
                         return;
   } else {
-    // hide the error message
-    $('#incorrect-data').text('')
-                        .addClass('hidden');
-    // this makes the button usable
     $("#call-back button").attr({
                                 "data-dismiss":'modal',
                                 "data-toggle":"modal",
@@ -28,6 +25,11 @@ function validateInput(){
                               });
   }
 };
+$('#call-back input#phone').focus(function(){
+  if (!$('#call-back input#phone').val()){
+    $('#call-back input#phone').val(380);
+  };
+});
 
 $("#call-back input#name").focusout(validateInput)
                           .keyup(validateInput);

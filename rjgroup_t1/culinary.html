@@ -557,9 +557,10 @@
                   <div class="form-group">
                     <input type="tel" class="form-control" id="phone-number" placeholder="Phone number">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group controls">
                     <input type="email" class="form-control" id="usr-email" placeholder="Email" required data-validation-email-message="wrong email">
                   </div>
+
                   <div class="form-group">
                     <label for="usr-message">Your message:</label>
                     <textarea type="text" class="form-control" id="usr-message" rows="5"></textarea>
@@ -584,23 +585,38 @@
                   <h3>Order a free callback</h3>
                 </div>
                 <form action="mail/contact_me_kir.php" method="post" id="call-back-form"></form>
-                  <div class="modal-body">
+                  <div class="modal-body control-group">
 
-                    <div class="input-group">
-                      <input type="text" class="form-control" id="name"
-                      name="name" placeholder="Name"
-                      required form="call-back-form">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                      <label for="name"></label>
+                    <div class="controls">
+                      <div class="input-group ">
+                        <input type="text" class="form-control" id="name"
+                      name="name" placeholder="Name" autofocus
+                      required form="call-back-form" minlength="3"
+                      data-validation-minlength-message = "Name must have 3 leters at least">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <label for="name"></label>
+                      </div>
                     </div>
 
-                    <div class="input-group">
-                      <input type="tel" class="form-control" id="phone"
-                      name="phone" placeholder="Phone number"
-                      required form="call-back-form">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-                      <label for="phone"></label>
+                    <div class="controls">
+                      <div class="input-group ">
+                        <input type="tel" class="form-control" id="phone"
+                            name="phone" placeholder="Phone number"
+                            required form="call-back-form"
+                            
+                            minlength="12"
+        data-validation-consistsofnumbers-regex="([^0-9]*[0-9]+)+"
+        data-validation-minlength-message = "Phone must have 12 numbers at least"
+        data-validation-consistsofnumbers-message="Phone must consist of numbers only" >
+                        <span class="input-group-addon">
+                          <i class="glyphicon glyphicon-phone"></i>
+                        </span>
+                        <label for="phone"></label>
+                      </div>
+                      <p class="help-block"></p>
+
                     </div>
+
                     <p id="incorrect-data" class="alert alert-warning hidden"></p>
                   </div>
                   <div class="modal-footer">
