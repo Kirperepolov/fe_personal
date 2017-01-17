@@ -8,7 +8,7 @@ if(empty($_POST['name'])  		||
    }
 
 $name = $_POST['name'];
-$email_address = 'info@rjgroup.com.ua';
+$email_address = 'johnyd@bigmir.net';
 $phone = $_POST['phone'];
 
 // create email body and send it

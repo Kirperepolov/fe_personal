@@ -543,32 +543,34 @@
 
               <!-- Popup content-->
               <div class="modal-content modern">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h3>Place an order</h3>
-                </div>
                 <div class="modal-body">
+
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3 class="text-center">Place an order</h3>
+                  <hr class="colored">
+
                   <div class="form-group">
-                    <input type="text" class="form-control" id="usr-name" placeholder="Name" required autofocus>
+                    <input type="text" class="form-control" name="usr-name" id="usr-name" placeholder="Name" required autofocus>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="usr-surname" placeholder="Surname" required>
+                    <input type="text" class="form-control" name="usr-surname" id="usr-surname" placeholder="Surname" required>
                   </div>
                   <div class="form-group">
-                    <input type="tel" class="form-control" id="phone-number" placeholder="Phone number">
+                    <input type="tel" class="form-control" name="phone-number" id="phone-number" placeholder="Phone number">
                   </div>
                   <div class="form-group controls">
-                    <input type="email" class="form-control" id="usr-email" placeholder="Email" required data-validation-email-message="wrong email">
+                    <input type="email" class="form-control" name="usr-email" id="usr-email" placeholder="Email" required data-validation-email-message="wrong email">
                   </div>
 
                   <div class="form-group">
-                    <label for="usr-message">Your message:</label>
-                    <textarea type="text" class="form-control" id="usr-message" rows="5"></textarea>
+                    <textarea type="text" class="form-control" name="usr-message" id="usr-message" rows="5" placeholder="Type your message here..." ></textarea>
                   </div>
-                </div>
-                <div class="modal-footer">
+
+                  <hr class="colored">
                   <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Order</button>
+
                 </div>
+
               </div>
 
             </div>
@@ -576,62 +578,64 @@
 
           <!-- CALLBACK POPUP -->
           <div id="call-back" class="modal fade" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-sm">
 
               <!-- Popup content-->
               <div class="modal-content modern">
-                <div class="modal-header">
+                <div class="modal-body">
+
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h3>Order a free callback</h3>
-                </div>
-                <form action="mail/contact_me_kir.php" method="post" id="call-back-form"></form>
-                  <div class="modal-body control-group">
+                  <h3 class="text-center">Order a free callback</h3>
+                  <hr class="colored">
 
-                    <div class="controls">
-                      <div class="input-group ">
-                        <input type="text" class="form-control" id="name"
-                      name="name" placeholder="Name" autofocus
-                      required form="call-back-form" minlength="3"
-                      data-validation-minlength-message = "Name must have 3 leters at least">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <label for="name"></label>
-                      </div>
-                    </div>
+                  <form role="form" class="control-group" id="call-back-form" name="call-back-form" target="_blank" action="mail/contact_me_kir.php" method="post">
 
-                    <div class="controls">
-                      <div class="input-group ">
-                        <input type="tel" class="form-control" id="phone"
+                    <!-- "minlength" and "data-validation-*" attributes are required for input values validation.
+                    The "assets/js/plugins/jqBootstrapValidation.js" is used -->
+
+                          <div class="input-group controls">
+                            <input type="text" class="form-control" id="name"
+                            name="name" placeholder="Name" autofocus
+                            required minlength="3"
+                            data-validation-minlength-message = "Name must have 3 leters at least">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <br>
+                          </div>
+
+                          <div class="input-group controls">
+                            <input type="tel" class="form-control" id="phone"
                             name="phone" placeholder="Phone number"
-                            required form="call-back-form"
+                            required
 
                             minlength="12"
-        data-validation-consistsofnumbers-regex="([^0-9]*[0-9]+)+"
-        data-validation-minlength-message = "Phone must have 12 numbers at least"
-        data-validation-consistsofnumbers-message="Phone must consist of numbers only" >
-                        <span class="input-group-addon">
-                          <i class="glyphicon glyphicon-phone"></i>
-                        </span>
-                        <label for="phone"></label>
-                      </div>
-                      <p class="help-block"></p>
+                            data-validation-consistsofnumbers-regex="([^0-9]*[0-9]+)+"
+                            data-validation-minlength-message = "Phone must have 12 numbers at least"
+                            data-validation-consistsofnumbers-message="Phone must consist of numbers only" >
+                            <span class="input-group-addon">
+                              <i class="glyphicon glyphicon-phone"></i>
+                            </span>
+                          </div>
+                          <p class="help-block"></p>
 
-                    </div>
 
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-outline-dark">Call me!</button>
-                  </div>
+                        <hr class="colored">
+                        <button type="submit" class="btn btn-outline-dark modal-footer" data-toggle="modal">Call me!</button>
+                      <!-- </div> -->
+                  </form>
+                </div>
               </div>
-              <!-- callback order confirmation -->
-
-
             </div>
           </div>
+
+
+          <!-- callback order confirmation -->
           <div id="confirmation" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content modern">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                  <!-- actually this text is updated by assets/js/kirs_script.js -->
                   <h4 class="text-center">the Callbask is successfully requested</h4>
                 </div>
               </div>
@@ -695,8 +699,8 @@
           <script src="assets/js/plugins/jqBootstrapValidation.js"></script>
           <!-- Vitality Theme Scripts -->
           <script src="assets/js/vitality.js"></script>
-            <!-- Kir's personal Script -->
-            <script src="assets/js/kirs_script.js" charset="utf-8"></script>
+          <!-- Kir's personal Script -->
+          <script src="assets/js/kirs_script.js" charset="utf-8"></script>
         </body>
 
         </html>
