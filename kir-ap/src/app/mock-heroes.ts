@@ -6,3 +6,10 @@ export const HEROES: Hero[] = [
   { id: 34, name: 'Dasha' },
   { id: 35, name: 'Tolik' }
 ];
+
+export interface swapiResponce {
+  "count": string,
+  "next": string,
+  "previous": string,
+  "results": any
+}

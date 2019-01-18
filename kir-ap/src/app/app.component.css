@@ -18,6 +18,7 @@ nav a {
   display: inline-block;
   background-color: #eee;
   border-radius: 4px;
+  margin: 1px;
 }
 
 nav a:visited, a:link {
