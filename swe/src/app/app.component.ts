@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpLoaderService} from "./http-loader.service";
 
 @Component({
@@ -6,25 +6,27 @@ import {HttpLoaderService} from "./http-loader.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Star Wars Encyclopedia';
   private data: any;
-  private peopleList = [];
+  categories = [];
 
   constructor(private dataService: HttpLoaderService) {
   }
 
   ngOnInit() {
-    this.retrieveHeroes('people/');
+    this.retrieveCategories('');
   }
 
-  private retrieveHeroes(url: string) {
+  private retrieveCategories(url: string) {
     this.dataService.getData(url).subscribe(res => {
       this.data = res;
-      this.peopleList.push(...this.data.results);
-      console.log(this.peopleList);
+      for (let name in res) {
+        this.categories.push({name: name, link: res[name]});
+      }
+      console.log(this.categories);
       if (this.data.next) {
-        this.retrieveHeroes(this.data.next);
+        this.retrieveCategories(this.data.next);
       }
     })
   }
