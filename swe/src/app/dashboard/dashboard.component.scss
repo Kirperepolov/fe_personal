@@ -1,0 +1,13 @@
+h1 {
+  margin-bottom: 2rem;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+
+  button {
+    flex: 1;
+    height: 2rem;
+  }
+}
