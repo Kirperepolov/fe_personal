@@ -1,12 +1,13 @@
 <div class="category">
+  <button (click)="this.goBack()" class="go-back">GO BACK</button>
   <h2>{{name | uppercase}}</h2>
   <div class="list">
-    <div *ngFor="let ent of list">
+    <div *ngFor="let ent of list" class="details" routerLink="/{{ent.id}}">
+      <img src="{{ent.img}}">
       <div class="name">{{ent.name}}</div>
-      <div class="details" routerLink="/{{ent.id}}">Details</div>
-      <div class="films" *ngFor="let film of ent.films">
-        <div class="film-name" routerLink="/{{film}}">{{film}}</div>
       </div>
-    </div>
+    <!--<div class="films" *ngFor="let film of ent.films">-->
+    <!--<div class="film-name" routerLink="/{{film}}">{{film}}</div>-->
+    <!--</div>-->
   </div>
 </div>

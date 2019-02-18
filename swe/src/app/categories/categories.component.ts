@@ -34,6 +34,7 @@ export class CategoriesComponent implements OnInit {
           continue;
         }
         ent.id = ent.url.replace(/^.*\/([a-z]*\/\d+)\/$/gi, '$1');
+        ent.img = `assets/img/${this.name}/${ent.name}.jpg`;
         this.list.push(ent);
       }
       console.log(this.list);
