@@ -5,9 +5,17 @@ h1 {
 #nav {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 
   button {
     flex: 1;
-    height: 2rem;
+    height: 6rem;
+    margin: 10px;
+    font-size: 2rem;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 20px #039be5;
+    }
   }
 }
