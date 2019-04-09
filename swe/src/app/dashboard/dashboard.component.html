@@ -1,0 +1,4 @@
+<div id="nav">
+  <button *ngFor="let cat of categories"
+          routerLink="/{{cat.name}}">{{cat.name | uppercase}}</button>
+</div>

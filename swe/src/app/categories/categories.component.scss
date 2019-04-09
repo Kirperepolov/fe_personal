@@ -1,0 +1,18 @@
+.details {
+  display: inline-block;
+  font-size: 1.5rem;
+  width: 200px;
+  margin: 0 10px 10px;
+  border-radius: 10px;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px #039be5;
+  }
+
+  img {
+    width: 200px;
+    border-radius: 10px;
+  }
+}
